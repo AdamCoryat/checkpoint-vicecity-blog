@@ -56,7 +56,7 @@ export default {
   },
   methods:{
     createBlog(){
-      this.$store.dispatch("createBlog", this.newBlog)
+      this.$store.dispatch("create", {data:this.newBlog, path: 'blogs'})
     }
   },
   components:{}

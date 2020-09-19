@@ -1,7 +1,7 @@
 <template>
-  <div class="comment" id="comment">
-{{comment.body}}
-
+  <div class="comment border border-danger" id="comment">
+    <p class="">{{comment.body}}</p>
+    <button v-if="isCreator">Delete</button>
   </div>
 </template>
 
@@ -15,7 +15,11 @@ export default {
   data(){
     return {}
   },
-  computed:{},
+  computed:{
+     isCreator(){
+      return this.$store.state.profile.email == this.comment.creatorEmail
+    }
+  },
   methods:{},
   components:{}
 }
