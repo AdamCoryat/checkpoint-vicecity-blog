@@ -27,7 +27,7 @@
           </div>
         </div>
       </div>
-      <div class="col-6">
+      <div class="col-2">
          <div class="card-body px-lg-5 pt-0">
             <form @submit.prevent="editBlog" class="md-form" v-if="editToggle">
                         <input
@@ -93,7 +93,7 @@ export default {
       this.$store.dispatch('create', {data:this.newComment, path: 'comments'})
     },
     editBlog(){
-      this.$store.dispatch('edit', {resource: 'blogs/', id: this.$route.params.id, data:this.blogEdit, path:'activeBlog'})
+      this.$store.dispatch('edit', {resource: 'blogs/', id: this.$route.params.id, data:this.blogEdit, path:'blogs/' + this.$route.params.id})
       this.editToggle = false 
     }
  

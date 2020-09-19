@@ -14,7 +14,7 @@ import Blog from "../components/Blog.vue"
 export default {
   name: 'home',
   mounted(){
-    this.$store.dispatch('getResource', 'blogs' )
+    this.$store.dispatch('getResource', {resource: 'blogs/', path: 'blogs'} )
   },
   data(){
     return {}

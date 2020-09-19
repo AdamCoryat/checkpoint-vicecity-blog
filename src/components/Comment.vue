@@ -37,7 +37,7 @@ export default {
       this.$store.dispatch('deleteById', {resource: 'comments/', id: this.comment.id, path: 'comments'})
     },
     editComment(){
-      this.$store.dispatch('edit', {resource: 'comments/', id: this.comment.id, data:this.commentEdit, path:'comments'})
+      this.$store.dispatch('edit', {resource: 'comments/', id: this.comment.id, data:this.commentEdit, path: 'blogs/' + this.comment.blog})
     }
   },
   components:{}

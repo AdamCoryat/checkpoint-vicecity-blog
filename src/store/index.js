@@ -10,7 +10,11 @@ export default new Vuex.Store({
     profile: {},
     blogs: [],
     activeBlog: {},
-    comments: []
+    comments: [],
+    profileComments: [],
+    profileBlogs: []
+
+
 
   },
   mutations: {
@@ -34,10 +38,10 @@ export default new Vuex.Store({
         console.error(error);
       }
     },
-    async getResource({commit}, resource){
+    async getResource({commit}, payload){
       try {
-        let res = await api.get(resource)
-        console.log(res)
+        let res = await api.get(payload.resource)
+        let resource = payload.path
         commit('setResource', {data: res.data, resource})
       } catch (error) {
         console.error(error);
@@ -75,8 +79,9 @@ export default new Vuex.Store({
     },
     async edit({commit}, payload){
       try {
-        let res = await api.put(payload.resource + payload.id, payload.data)
-        let resource = payload.path
+        let res = await api.put(payload.resource + '/' + payload.id, payload.data)
+        let resource = payload.resource
+        router.push({name: "Home"})
         commit('setResource', {data: res.data, resource})
       } catch (error) {
         console.error(error);
