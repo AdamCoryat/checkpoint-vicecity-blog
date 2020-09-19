@@ -93,7 +93,7 @@ export default {
       this.$store.dispatch('create', {data:this.newComment, path: 'comments'})
     },
     editBlog(){
-      this.$sotre.dispatch('edit', {resource: 'blogs/', id: this.$route.params.id, data:this.blogEdit, path:'blogs'})
+      this.$store.dispatch('edit', {resource: 'blogs/', id: this.$route.params.id, data:this.blogEdit, path:'activeBlog'})
       this.editToggle = false 
     }
  

@@ -2,6 +2,15 @@
   <div class="comment border border-danger" id="comment">
     <p class="">{{comment.body}}</p>
     <button v-if="isCreator" @click="deleteComment">Delete</button>
+    <button v-if="isCreator" @click="editToggle = !editToggle">Edit</button>
+     <form @submit.prevent="editComment" class="md-form" v-if="editToggle">
+                        <input
+                         v-model="commentEdit.body"
+                         type="text"
+                         id="materialSaveFormName"
+                         class="form-control"
+                         placeholder="Comment edit...">
+                         </form>
   </div>
 </template>
 
@@ -13,7 +22,10 @@ export default {
   },
   name: 'comment',
   data(){
-    return {}
+    return {
+      commentEdit:{},
+      editToggle: false
+    }
   },
   computed:{
      isCreator(){
@@ -23,6 +35,9 @@ export default {
   methods:{
     deleteComment(){
       this.$store.dispatch('deleteById', {resource: 'comments/', id: this.comment.id, path: 'comments'})
+    },
+    editComment(){
+      this.$store.dispatch('edit', {resource: 'comments/', id: this.comment.id, data:this.commentEdit, path:'comments'})
     }
   },
   components:{}

@@ -20,9 +20,6 @@ export default new Vuex.Store({
     setResource(state, payload){
       state[payload.resource] = payload.data
     },
-    setBlogs(state, blogs){
-      state.blogs = blogs
-    },
     delete(state, payload){
       state[payload.resource] = state[payload.resource].filter(p => p.id !=payload.id)
     }
@@ -75,6 +72,16 @@ export default new Vuex.Store({
       } catch (error) {
         console.error(error);
       }
+    },
+    async edit({commit}, payload){
+      try {
+        let res = await api.put(payload.resource + payload.id, payload.data)
+        let resource = payload.path
+        commit('setResource', {data: res.data, resource})
+      } catch (error) {
+        console.error(error);
+      }
+      
     }
   },
 });
