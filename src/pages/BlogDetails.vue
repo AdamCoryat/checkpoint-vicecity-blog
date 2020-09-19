@@ -1,7 +1,7 @@
 <template>
   <div class="blog-details container-fluid" id="blog-details">
     <div class="row d-flex justify-content-center">
-      <div class="col-6 m-5">
+      <div class="col-12 col-md-6 m-5">
         <div class="card blog text-success border border-sucess">
           <div class="card-body">
             <button v-if="isCreator" @click="editToggle = !editToggle">Edit</button>

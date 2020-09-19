@@ -29,8 +29,15 @@ export default {
 
 
 <style scoped>
-.bg-profile-comment{
+.profileComment{
   background-color: rgba(12, 12, 12, 0.534);
+  font-family: 'Damion', cursive;;
+  transition: 0.5s ease;
+  cursor: pointer;
+}
+
+.profileComment:hover {
+  transform: scale(1.05);
 }
 
 </style>

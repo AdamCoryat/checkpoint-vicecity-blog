@@ -2,20 +2,41 @@
   <div class="about container-fluid">
     <div class="row">
       <div class="col-4 text-center">
-          <div class="card card-body bg-profile border border-success text-success">
-          <h4>Welcome {{ profile.name }}</h4>
-          <img class="rounded" :src="profile.picture" alt="" />
-          <p>{{ profile.email }}</p>
+          <div class="m-2 card card-body bg-profile border border-success text-success">
+          <h4><span class="text-primary">Name:</span> {{ profile.name }}</h4>
+          <img class="rounded shadow text-center" :src="profile.picture" alt="profile-picture" />
+          <p><span class="text-primary">Email:</span>{{ profile.email }}</p>
         </div>
       </div>
-      <div class="col-2 text-center">
-        <profile-comment v-for="comment in profileComments" :key="comment.id" :profileComment="comment"/>
+      <div class="col-2">
+        <div class="m-2 card card-body bg-profile border border-success text-success">
+            <h3>Stats:</h3>
+            <p><span class="text-primary">Total Blogs:</span> {{ profileBlogs.length }}</p>
+            <p><span class="text-primary">Total Comments:</span> {{ profileComments.length }}</p>
+          </div>        
       </div>
       <div class="col-6">
-        <blog v-for="blog in profileBlogs" :key="blog.id" :blog="blog"/>
+        <div class="">
+        <img src="../assets/profile.jpg" style="width: 40vw" alt="">
+        </div>
       </div>
     </div>
-  </div>
+      <div class="row">
+        <div class="col-12 col-md-4 text-center">
+          <h1 class="text-primary b-f">Your Comments:</h1>
+            <div class="comments">
+              <profile-comment v-for="comment in profileComments" :key="comment.id" :profileComment="comment"/>
+            </div>
+          </div>
+        <div class="col-md-2"></div>
+        <div class="col-12 col-md-6 text-center blogs">
+          <h1 class="text-primary b-f">Your Blogs:</h1>
+          <div class="row  justify-content-center">
+          <blog v-for="blog in profileBlogs" :key="blog.id" :blog="blog"/>
+          </div>
+        </div>
+      </div>
+        </div>
 </template>
 
 <script>
@@ -54,7 +75,15 @@ export default {
   background-color: rgba(12, 12, 12, 0.534);
   font-family: 'Orbitron', sans-serif;
 }
+.b-f{
+  font-family: 'Orbitron', sans-serif;
+}
 img {
   max-width: 100px;
+}
+.comments{
+  height: 60vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 </style>
