@@ -15,7 +15,7 @@ h5 {
     -2px 4px 4px #091243, 
     0 0 10px #00D0FF,
     inset 1px 1px 1px white;
-  color: #1FFFFF;
+  color: #ec1fff;
   border: 2px solid;
   border-radius: 4px;
   background-color: transparent;
@@ -23,11 +23,11 @@ h5 {
     0 1px 2px rgba(0,0,0, 0.6), 
     2px 1px 4px rgba(0,0,0, 0.3), 
     2px 4px 3px rgba(3,0,128, 0.3), 
-    0 0 7px 2px rgba(0,208,255, 0.6), 
+    0 0 7px 2px rgba(226, 101, 209, 0.6), 
     inset 0 1px 2px rgba(0,0,0, 0.6), 
     inset 2px 1px 4px rgba(0,0,0, 0.3), 
     inset 2px 4px 3px rgba(3,0,128, 0.3), 
-    inset 0 0 7px 2px rgba(0,208,255, 0.6);
+    inset 0 0 7px 2px rgba(226, 101, 209, 0.6);
   animation: flickering 5s infinite;
 }
 
@@ -38,7 +38,7 @@ h5 {
   }
   
   2% {
-    border-color: #1FFFFF;
+    border-color: #ec1fff;
     opacity: 1;
   }
   
@@ -48,12 +48,12 @@ h5 {
   }
   
   8% {
-    border-color: #1FFFFF;
+    border-color: #ec1fff;
     opacity: 1;
   }
   
   28% {
-    border-color: #1FFFFF;
+    border-color: #ec1fff;
     opacity: 1;
   }
   
@@ -63,12 +63,12 @@ h5 {
   }
   
   36% {
-    border-color: #1FFFFF;
+    border-color: #ec1fff;
     opacity: 1;
   }
   
   100% {
-    border-color: #1FFFFF;
+    border-color: #ec1fff;
     opacity: 1;
   }
 }

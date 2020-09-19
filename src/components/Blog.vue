@@ -36,5 +36,11 @@ export default {
 .blog{
   background-color: rgba(12, 12, 12, 0.534);
   font-family: 'Damion', cursive;;
+  transition: 0.5s ease;
+  cursor: pointer;
+}
+
+.blog:hover {
+  transform: scale(1.05);
 }
 </style>

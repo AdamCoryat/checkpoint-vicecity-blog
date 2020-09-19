@@ -26,8 +26,8 @@ export default {
 </script>
 <style lang="scss">
 body{
-  background: rgb(131,58,180);
-background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(202,29,253,1) 35%, rgba(69,252,244,1) 100%);
+  background: rgb(0,0,0);
+  background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(207,88,194,1) 46%, rgba(0,0,0,1) 100%);
 }
 @import "./assets/_variables.scss";
 @import "bootstrap";

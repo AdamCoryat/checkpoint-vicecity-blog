@@ -1,6 +1,6 @@
 <template>
 <div class="navbar-bg">
-  <nav class="navbar navbar-expand-lg navbar-light">
+  <nav class="navbar navbar-expand-lg navbar-light shadow">
     <router-link class="navbar-brand d-flex" :to="{ name: 'Home' }">
       <div class="d-flex flex-column align-items-center">
         <img
@@ -75,5 +75,6 @@ export default {
 <style scoped>
 .navbar-bg{
   background-color: rgba(22, 22, 65, 0.705);
+  font-family: 'Orbitron', sans-serif;
 }
 </style>

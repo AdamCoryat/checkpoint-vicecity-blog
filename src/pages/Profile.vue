@@ -2,23 +2,25 @@
   <div class="about container-fluid">
     <div class="row">
       <div class="col-4 text-center">
-        <h4>Welcome {{ profile.name }}</h4>
-        <img class="rounded" :src="profile.picture" alt="" />
-        <p>{{ profile.email }}</p>
+          <div class="card card-body bg-profile border border-success text-success">
+          <h4>Welcome {{ profile.name }}</h4>
+          <img class="rounded" :src="profile.picture" alt="" />
+          <p>{{ profile.email }}</p>
+        </div>
       </div>
-    <div class="col-4 text-center">
-      <comment v-for="comment in profileComments" :key="comment.id" :comment="comment"/>
+      <div class="col-2 text-center">
+        <profile-comment v-for="comment in profileComments" :key="comment.id" :profileComment="comment"/>
+      </div>
+      <div class="col-6">
+        <blog v-for="blog in profileBlogs" :key="blog.id" :blog="blog"/>
+      </div>
     </div>
-    <div class="col-4">
-      <blog v-for="blog in profileBlogs" :key="blog.id" :blog="blog"/>
-    </div>
-  </div>
   </div>
 </template>
 
 <script>
 import Blog from "../components/Blog.vue"
-import Comment from "../components/Comment.vue"
+import ProfileComment from "../components/ProfileComment.vue"
 export default {
   name: "Profile",
   mounted(){
@@ -40,7 +42,7 @@ export default {
   methods:{
   },
   components:{
-    Comment,
+    ProfileComment,
     Blog
   }
 
@@ -48,6 +50,10 @@ export default {
 </script>
 
 <style scoped>
+.bg-profile{
+  background-color: rgba(12, 12, 12, 0.534);
+  font-family: 'Orbitron', sans-serif;
+}
 img {
   max-width: 100px;
 }
