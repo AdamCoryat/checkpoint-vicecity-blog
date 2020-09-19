@@ -4,6 +4,7 @@
       <div class="col-6 m-5">
         <div class="card blog text-success border border-sucess">
           <div class="card-body">
+            <button v-if="isCreator" @click="editToggle = !editToggle">Edit</button>
             <h5 class="card-title">{{activeBlog.title}}</h5>
             <p class="card-text">{{activeBlog.body}}</p>
             <p class="card-text">{{activeBlog.creatorEmail}}</p>
@@ -26,6 +27,29 @@
           </div>
         </div>
       </div>
+      <div class="col-6">
+         <div class="card-body px-lg-5 pt-0">
+            <form @submit.prevent="editBlog" class="md-form" v-if="editToggle">
+                        <input
+                         v-model="blogEdit.title"
+                         type="text"
+                         id="materialSaveFormName"
+                         class="form-control"
+                         placeholder="Title...">
+                        <label for="title">Title</label>
+                        <textarea
+                         v-model="blogEdit.body"
+                         type="text"
+                         id="materialSaveFormMessage"
+                         class="form-control md-textarea"
+                         rows="3"
+                         placeholder="Blog Body...">
+                         </textarea>
+                        <label for="body">Blog Body</label>                     
+               <button class="btn btn-outline-info btn-rounded btn-block z-depth-0 my-4 waves-effect" type="submit">Save</button>
+            </form>
+       </div>
+      </div>
     </div>
   </div>
 </template>
@@ -43,7 +67,11 @@ export default {
     return {
       newComment:{
         blog: this.$route.params.id
-      }
+      },
+      blogEdit: {},
+      editToggle: false, 
+
+
     }
   },
   computed:{
@@ -56,7 +84,6 @@ export default {
     comments(){
       return this.$store.state.comments
     }
-
   },
   methods:{
     deleteById(){
@@ -64,6 +91,10 @@ export default {
     },
     createComment(){
       this.$store.dispatch('create', {data:this.newComment, path: 'comments'})
+    },
+    editBlog(){
+      this.$sotre.dispatch('edit', {resource: 'blogs/', id: this.$route.params.id, data:this.blogEdit, path:'blogs'})
+      this.editToggle = false 
     }
  
   },

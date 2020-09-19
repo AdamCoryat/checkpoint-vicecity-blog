@@ -1,7 +1,7 @@
 <template>
   <div class="comment border border-danger" id="comment">
     <p class="">{{comment.body}}</p>
-    <button v-if="isCreator">Delete</button>
+    <button v-if="isCreator" @click="deleteComment">Delete</button>
   </div>
 </template>
 
@@ -20,7 +20,11 @@ export default {
       return this.$store.state.profile.email == this.comment.creatorEmail
     }
   },
-  methods:{},
+  methods:{
+    deleteComment(){
+      this.$store.dispatch('deleteById', {resource: 'comments/', id: this.comment.id, path: 'comments'})
+    }
+  },
   components:{}
 }
 </script>

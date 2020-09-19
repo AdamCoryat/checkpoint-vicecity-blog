@@ -66,15 +66,12 @@ export default new Vuex.Store({
         console.error(error);
       }
     },
-    async create({commit, state}, payload){
+    async create({commit}, payload){
       try {
         let res = await api.post(payload.path, payload.data)
         let resource = payload.path
         commit('setResource', {data: res.data, resource})
-        if(resource == 'blogs'){
           router.push({name: "Home"})
-        } else {
-        }
       } catch (error) {
         console.error(error);
       }
