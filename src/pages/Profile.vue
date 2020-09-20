@@ -84,4 +84,16 @@ export default {
   overflow-y: scroll;
   overflow-x: hidden;
 }
+.comments::-webkit-scrollbar {
+  width: 1em;
+}
+
+.comments::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+.comments::-webkit-scrollbar-thumb {
+background-color: rgb(228, 109, 202);
+outline: 1px solid rgb(231, 143, 248);
+}
 </style>
