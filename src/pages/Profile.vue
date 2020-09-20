@@ -29,8 +29,10 @@
         <div class="col-md-2"></div>
         <div class="col-12 col-md-6 text-center blogs">
           <h1 class="text-primary b-f">Your Blogs:</h1>
-          <div class="row  justify-content-center">
+          <div class="row justify-content-center">
+            <div class="comments">
           <blog v-for="blog in profileBlogs" :key="blog.id" :blog="blog"/>
+          </div>
           </div>
         </div>
       </div>

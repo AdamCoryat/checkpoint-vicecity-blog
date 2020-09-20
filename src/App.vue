@@ -2,11 +2,13 @@
   <div id="app" class="app">
     <navbar />
     <router-view />
+    <my-footer />
   </div>
 </template>
 
 <script>
 import Navbar from "@/components/navbar";
+import MyFooter from "@/components/MyFooter.vue"
 import { onAuth } from "@bcwdev/auth0-vue";
 import { setBearer } from "./services/AxiosService";
 export default {
@@ -21,6 +23,7 @@ export default {
   },
   components: {
     Navbar,
+    MyFooter
   },
 };
 </script>
