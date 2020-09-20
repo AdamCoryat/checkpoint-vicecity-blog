@@ -4,7 +4,7 @@
       <div class="col-4 text-center">
           <div class="m-2 card card-body bg-profile border border-success text-success">
           <h4><span class="text-primary">Name:</span> {{ profile.name }}</h4>
-          <img class="rounded shadow text-center" :src="profile.picture" alt="profile-picture" />
+          <img class="rounded shadow text-center profile-img" :src="profile.picture" alt="profile-picture" />
           <p><span class="text-primary">Email:</span>{{ profile.email }}</p>
         </div>
       </div>
@@ -15,10 +15,8 @@
             <p><span class="text-primary">Total Comments:</span> {{ profileComments.length }}</p>
           </div>        
       </div>
-      <div class="col-6">
-        <div class="">
-        <img src="../assets/profile.jpg" style="width: 40vw" alt="">
-        </div>
+      <div class="col-6 text-center">
+        <img class="m-2 border border-success shadow rounded" src="../assets/profile.jpg" style="width: 35vw" alt="">
       </div>
     </div>
       <div class="row">
@@ -78,7 +76,7 @@ export default {
 .b-f{
   font-family: 'Orbitron', sans-serif;
 }
-img {
+.profile-img {
   max-width: 100px;
 }
 .comments{

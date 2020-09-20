@@ -1,16 +1,20 @@
 <template>
-  <div class="comment border border-danger" id="comment">
-    <p class="">{{comment.body}}</p>
-    <button v-if="isCreator" @click="deleteComment">Delete</button>
-    <button v-if="isCreator" @click="editToggle = !editToggle">Edit</button>
-     <form @submit.prevent="editComment" class="md-form" v-if="editToggle">
-                        <input
-                         v-model="commentEdit.body"
-                         type="text"
-                         id="materialSaveFormName"
-                         class="form-control"
-                         placeholder="Comment edit...">
-                         </form>
+  <div class="comment" id="comment">
+    <div class="card m-1 p-1 s-bg">
+        <p>{{comment.body}}</p>
+        <p class="font-italic text-primary">-{{comment.creatorEmail}}</p>
+    </div>  
+        <i v-if="isCreator" @click="deleteComment" class="mx-2 fa fa-trash-o" aria-hidden="true"></i>
+        <i v-if="isCreator" @click="editToggle = !editToggle" class="mx-2 fa fa-pencil pointer text-primary" aria-hidden="true"></i>
+        <form @submit.prevent="editComment" class="md-form" v-if="editToggle">
+          <input
+          v-model="commentEdit.body"
+          type="text"
+          id="materialSaveFormName"
+          class="form-control"
+          placeholder="Comment edit...">
+       </form>
+    
   </div>
 </template>
 

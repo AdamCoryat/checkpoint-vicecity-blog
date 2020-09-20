@@ -4,6 +4,18 @@
   border-color: darken($color: $primary, $amount: 10);
   border-width: medium;
 }
+
+.s-bg{
+  background-color: rgba(12, 12, 12, 0.534);
+}
+.primary-font{
+  font-family: 'Orbitron', sans-serif;
+}
+
+.pointer{
+  cursor: pointer;
+}
+
 h5 {
   display: block;
   margin: auto;

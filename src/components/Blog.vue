@@ -2,7 +2,7 @@
   <div id="blog">
     <div class="col-6 col-md-3">
       <router-link :to="{name: 'BlogDetails' , params:{id: blog.id}}">
-        <div class="m-3 blog card text-center text-success border border-success" style="width: 18rem;">
+        <div class="m-3 blog card text-center text-success border border-success shadow" style="width: 18rem;">
           <div class="card-body">
             <h5 class="card-title">{{blog.title}}</h5>
             <p class="card-text">{{blog.creatorEmail}}</p>
