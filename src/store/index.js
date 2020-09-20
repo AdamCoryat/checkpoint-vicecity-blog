@@ -87,5 +87,14 @@ export default new Vuex.Store({
         console.error(error);
       }
     },
+    async editProfile({ commit, dispatch }, payload) {
+      try {
+        let res = await api.put("profile", payload.data);
+        commit("setProfile", res.data);
+        dispatch("getprofile");
+      } catch (error) {
+        console.error(error);
+      }
+    },
   },
 });

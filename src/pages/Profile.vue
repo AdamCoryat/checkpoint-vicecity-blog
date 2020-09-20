@@ -5,6 +5,36 @@
         <div
           class="m-2 card card-body s-bg primary-font border border-success text-success"
         >
+          <i
+            class="fa fa-cog text-right pointer text-primary"
+            aria-hidden="true"
+            @click="editToggle = !editToggle"
+          ></i>
+          <div v-if="editToggle">
+            <div class="card-body px-lg-5 pt-0">
+              <form @submit.prevent="editProfile" class="md-form">
+                <textarea
+                  v-model="profileEdit.name"
+                  type="text"
+                  id="materialSaveFormMessage"
+                  class="form-control my-2"
+                  placeholder="Name..."
+                >
+                </textarea>
+                <textarea
+                  v-model="profileEdit.picture"
+                  type="url"
+                  id="materialSaveFormMessage"
+                  class="form-control my-2"
+                  placeholder="Picture..."
+                >
+                </textarea>
+                <button class="btn btn-success btn-rounded my-1" type="submit">
+                  Save
+                </button>
+              </form>
+            </div>
+          </div>
           <h4><span class="text-primary">Name:</span> {{ profile.name }}</h4>
           <img
             class="rounded shadow text-center profile-img"
@@ -67,6 +97,7 @@ import Blog from "../components/Blog.vue";
 import ProfileComment from "../components/ProfileComment.vue";
 export default {
   name: "Profile",
+
   mounted() {
     this.$store.dispatch("getProfile");
     this.$store.dispatch("getResource", {
@@ -77,6 +108,12 @@ export default {
       resource: "profile/blogs",
       path: "profileBlogs",
     });
+  },
+  data() {
+    return {
+      profileEdit: {},
+      editToggle: false,
+    };
   },
   computed: {
     profileComments() {
@@ -89,7 +126,18 @@ export default {
       return this.$store.state.profile;
     },
   },
-  methods: {},
+  methods: {
+    editProfile() {
+      swal("Edit has been saved!").then((value) => {
+        this.$store.dispatch("editProfile", {
+          data: this.profileEdit,
+        });
+        this.editToggle = false;
+        swal(`Congrats on editing your Profile!`);
+      });
+    },
+  },
+
   components: {
     ProfileComment,
     Blog,
