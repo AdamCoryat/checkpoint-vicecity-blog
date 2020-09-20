@@ -10,13 +10,13 @@ Vue.use(Auth0Plugin, {
   domain,
   clientId,
   audience,
-  onRedirectCallback: appState => {
+  onRedirectCallback: (appState) => {
     router.push(
       appState && appState.targetUrl
         ? appState.targetUrl
         : window.location.pathname
     );
-  }
+  },
 });
 
 new Vue({
@@ -24,5 +24,5 @@ new Vue({
   store,
   render: function(h) {
     return h(App);
-  }
+  },
 }).$mount("#app");

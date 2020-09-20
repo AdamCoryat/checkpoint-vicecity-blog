@@ -1,23 +1,26 @@
 <template>
-  <div class="myfooter primary-font text-primary text-center d-flex justify-content-center flex-wrap align-content-center" id="myfooter">
+  <div
+    class="myfooter primary-font text-primary text-center d-flex justify-content-center flex-wrap align-content-center"
+    id="myfooter"
+  >
     <p>Made with Love by A.D.D Designs LLC</p>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'myfooter',
-  data(){
-    return {}
+  name: "myfooter",
+  data() {
+    return {};
   },
-  computed:{},
-  methods:{},
-  components:{}
-}
+  computed: {},
+  methods: {},
+  components: {},
+};
 </script>
 
 <style scoped>
-.myfooter{
+.myfooter {
   min-height: 8vh;
   background-color: rgba(22, 22, 65, 0.705);
   position: relative;

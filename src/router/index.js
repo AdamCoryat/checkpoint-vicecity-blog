@@ -5,9 +5,9 @@ import Home from "../pages/Home.vue";
 // @ts-ignore
 import Profile from "../pages/Profile.vue";
 // @ts-ignore
-import CreateBlog from "../pages/CreateBlog.vue"
+import CreateBlog from "../pages/CreateBlog.vue";
 // @ts-ignore
-import BlogDetails from "../pages/BlogDetails.vue"
+import BlogDetails from "../pages/BlogDetails.vue";
 import { authGuard } from "@bcwdev/auth0-vue";
 
 Vue.use(VueRouter);

@@ -8,31 +8,35 @@
 
 <script>
 import Navbar from "@/components/navbar";
-import MyFooter from "@/components/MyFooter.vue"
+import MyFooter from "@/components/MyFooter.vue";
 import { onAuth } from "@bcwdev/auth0-vue";
 import { setBearer } from "./services/AxiosService";
 import swal from "sweetalert";
 export default {
   name: "App",
- 
+
   async beforeCreate() {
     await onAuth();
     if (this.$auth.isAuthenticated) {
       setBearer(this.$auth.bearer);
-      this.$store.dispatch("getProfile")
+      this.$store.dispatch("getProfile");
     }
   },
   components: {
     Navbar,
-    MyFooter
+    MyFooter,
   },
 };
 </script>
 <style lang="scss">
-
-body{
-  background: rgb(0,0,0);
-  background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(207,88,194,1) 46%, rgba(0,0,0,1) 100%);
+body {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(207, 88, 194, 1) 46%,
+    rgba(0, 0, 0, 1) 100%
+  );
 }
 @import "./assets/_variables.scss";
 @import "bootstrap";
