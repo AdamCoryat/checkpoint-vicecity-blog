@@ -1,5 +1,5 @@
 <template>
-  <div class="about container-fluid">
+  <div class="about container-fluid" id="profile">
     <div class="row">
       <div class="col-12 col-md-4 text-center">
           <div class="m-2 card card-body bg-profile border border-success text-success">
@@ -71,6 +71,9 @@ export default {
 </script>
 
 <style scoped>
+#profile{
+  min-height: 88vh;
+}
 .bg-profile{
   background-color: rgba(12, 12, 12, 0.534);
   font-family: 'Orbitron', sans-serif;
@@ -82,7 +85,7 @@ export default {
   max-width: 100px;
 }
 .comments{
-  height: 60vh;
+  height: 50vh;
   overflow-y: scroll;
   overflow-x: hidden;
 }

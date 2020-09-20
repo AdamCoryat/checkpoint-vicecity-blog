@@ -38,10 +38,30 @@ export default {
   },
   methods:{
     deleteComment(){
-      this.$store.dispatch('deleteById', {resource: 'comments/', id: this.comment.id, path: 'comments'})
-    },
+      swal({
+        title: "Are you sure?",
+        text: "Once deleted, its gone forever...",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      })
+    .then((willDelete) => {
+      if (willDelete) {
+        this.$store.dispatch('deleteById', {resource: 'comments/', id: this.comment.id, path: 'comments'})
+      swal("Boom, Comment Delorted!", {
+        icon: "success",
+      });
+      } else {
+        swal("Wise choice!");
+      }
+    });       
+  },
     editComment(){
+      swal("Edit has been saved!")
+    .then((value) => {
       this.$store.dispatch('edit', {resource: 'comments/', id: this.comment.id, data:this.commentEdit, path: 'blogs/' + this.comment.blog})
+    swal(`Congrats on editing your comment!`);
+      });  
     }
   },
   components:{}

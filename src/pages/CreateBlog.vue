@@ -29,8 +29,8 @@
        </div>
     </div>
   </div>
-  <div class="col-8 col-md-6 text-center">
-  <img class="rounded shandow my-4 border border-success" src="../assets/create.jpg" sytle="width: 30vw " alt="">
+  <div class="col-12 col-md-6 text-center">
+  <img class="rounded shandow my-4 border border-success" src="../assets/create.jpg" style="width: 30vw" alt="">
   </div>
 </div>
   </div>
@@ -55,13 +55,19 @@ export default {
   },
   methods:{
     createBlog(){
+      swal("Congrats on your new Blog!")
+    .then((value) => {
       this.$store.dispatch("create", {data:this.newBlog, path: 'blogs'})
-    }
-  },
+    swal(`Keep on keeping on!`);
+    });     
+  }
+},
   components:{}
 }
 </script>
 
-
 <style scoped>
+#create-blog{
+  min-height: 87vh;
+}
 </style>

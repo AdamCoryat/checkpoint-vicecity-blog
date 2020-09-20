@@ -11,6 +11,7 @@ import Navbar from "@/components/navbar";
 import MyFooter from "@/components/MyFooter.vue"
 import { onAuth } from "@bcwdev/auth0-vue";
 import { setBearer } from "./services/AxiosService";
+import swal from "sweetalert";
 export default {
   name: "App",
  
@@ -28,6 +29,7 @@ export default {
 };
 </script>
 <style lang="scss">
+
 body{
   background: rgb(0,0,0);
   background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(207,88,194,1) 46%, rgba(0,0,0,1) 100%);

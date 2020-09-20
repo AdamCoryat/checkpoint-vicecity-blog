@@ -32,7 +32,6 @@ export default new Vuex.Store({
     async getProfile({ commit }) {
       try {
         let res = await api.get("profile");
-        console.log(res)
         commit("setProfile", res.data);
       } catch (error) {
         console.error(error);
@@ -50,7 +49,6 @@ export default new Vuex.Store({
     async getById({commit}, payload){
         try {
           let res = await api.get(payload.resource + payload.id)
-          console.log(res)
           let resource = payload.path
           commit('setResource', {data: res.data, resource})
         } catch (error) {
@@ -81,7 +79,7 @@ export default new Vuex.Store({
       try {
         let res = await api.put(payload.resource + '/' + payload.id, payload.data)
         let resource = payload.resource
-        router.push({name: "Home"})
+         router.push({name: "Home"})
         commit('setResource', {data: res.data, resource})
       } catch (error) {
         console.error(error);

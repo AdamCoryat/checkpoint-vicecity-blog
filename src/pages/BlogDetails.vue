@@ -89,16 +89,41 @@ export default {
   },
   methods:{
     deleteById(){
-      this.$store.dispatch('deleteById', {resource: 'blogs/', id: this.$route.params.id, path: 'activeBlog'})
+      swal({
+  title: "Are you sure?",
+  text: "Once deleted, its gone forever...",
+  icon: "warning",
+  buttons: true,
+  dangerMode: true,
+})
+    .then((willDelete) => {
+      if (willDelete) {
+        this.$store.dispatch('deleteById', {resource: 'blogs/', id: this.$route.params.id, path: 'activeBlog'})
+      swal("Boom, Blog Delorted!", {
+        icon: "success",
+      });
+        } else {
+          swal("Wise choice!");
+        }
+      });    
     },
+
     createComment(){
+           swal("Congrats on your new Comment!")
+    .then((value) => {
       this.$store.dispatch('create', {data:this.newComment, path: 'comments'})
-    },
+    swal(`Continue forth and Comment your heart out!`);
+    });     
+  },
+
     editBlog(){
+             swal("Edit has been saved!")
+    .then((value) => {
       this.$store.dispatch('edit', {resource: 'blogs/', id: this.$route.params.id, data:this.blogEdit, path:'blogs/' + this.$route.params.id})
-      this.editToggle = false 
+      this.editToggle = false
+        swal(`Congrats on editing your Blog!`);
+      });    
     }
- 
   },
   components:{
     Comment
@@ -111,6 +136,9 @@ export default {
 .blog{
   background-color: rgba(12, 12, 12, 0.534);
   font-family: 'Damion', cursive;;
+}
+#blog-details{
+  min-height: 88vh;
 }
 
 </style>
