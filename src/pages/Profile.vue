@@ -1,21 +1,21 @@
 <template>
   <div class="about container-fluid">
     <div class="row">
-      <div class="col-4 text-center">
+      <div class="col-12 col-md-4 text-center">
           <div class="m-2 card card-body bg-profile border border-success text-success">
           <h4><span class="text-primary">Name:</span> {{ profile.name }}</h4>
           <img class="rounded shadow text-center profile-img" :src="profile.picture" alt="profile-picture" />
           <p><span class="text-primary">Email:</span>{{ profile.email }}</p>
         </div>
       </div>
-      <div class="col-2">
+      <div class="col-6 col-md-2">
         <div class="m-2 card card-body bg-profile border border-success text-success">
             <h3>Stats:</h3>
             <p><span class="text-primary">Total Blogs:</span> {{ profileBlogs.length }}</p>
             <p><span class="text-primary">Total Comments:</span> {{ profileComments.length }}</p>
           </div>        
       </div>
-      <div class="col-6 text-center">
+      <div class="col-6 col-md-6 text-center">
         <img class="m-2 border border-success shadow rounded" src="../assets/profile.jpg" style="width: 35vw" alt="">
       </div>
     </div>

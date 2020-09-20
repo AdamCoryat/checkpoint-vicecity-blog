@@ -28,11 +28,11 @@
        </div>
       </div>
           <div class="card-body">
-            <i class="fa fa-pencil pointer" aria-hidden="true" v-if="isCreator" @click="editToggle = !editToggle"></i>
+            <i class="fa fa-pencil pointer text-primary" aria-hidden="true" v-if="isCreator" @click="editToggle = !editToggle"></i>
             <h5 class="card-title text-center">{{activeBlog.title}}</h5>
-            <p class="card-text">{{activeBlog.body}}</p>
+            <p class="card-text secondary-font">{{activeBlog.body}}</p>
             <p class="card-text font-italic text-primary">-{{activeBlog.creatorEmail}}</p>
-            <i @click="deleteById" v-if="isCreator" class="fa fa-trash-o" aria-hidden="true"></i>
+            <i @click="deleteById" v-if="isCreator" class="fa fa-trash-o text-primary pointer" aria-hidden="true"></i>
           </div>
           <div class="card-body border border-success">
           <comment v-for="comment in comments" :key="comment._id" :comment="comment"/>      

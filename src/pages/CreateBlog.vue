@@ -1,7 +1,7 @@
 <template>
   <div class="create-blog container-fluid" id="create-blog">
 <div class="row">
-  <div class="col-6">
+  <div class="col-12 col-md-6">
     <div class="m-5 card border-success s-bg shadow">
       <h1 class="card-header text-center text-success py-4 primary-font">
         <strong>Create Blog</strong>
@@ -29,7 +29,7 @@
        </div>
     </div>
   </div>
-  <div class="col-6 text-center">
+  <div class="col-8 col-md-6 text-center">
   <img class="rounded shandow my-4 border border-success" src="../assets/create.jpg" sytle="width: 30vw " alt="">
   </div>
 </div>

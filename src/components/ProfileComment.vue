@@ -2,7 +2,7 @@
   <div class="rounded profileComment border border-danger bg-profile-comment m-2 p-1" id="profileComment">
     <router-link :to="{name: 'BlogDetails' , params:{id: profileComment.blog}}">
       <div class="text-success ">
-        <p class="">{{profileComment.body}}</p>
+        <p class="secondary-font">{{profileComment.body}}</p>
       </div>
     </router-link>
   </div>
