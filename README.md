@@ -1,5 +1,7 @@
 # Blogger
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/84a31ba640d581718f1f/maintainability)](https://codeclimate.com/github/AdamCoryat/checkpoint-vicecity-blog/maintainability)
+
 ![](https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80)
 
 I created this application for a place to create blogs and post that you want to share with other people about the amazing game Grand Theft Auto Vice City. 
